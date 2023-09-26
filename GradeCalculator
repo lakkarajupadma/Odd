@@ -1,0 +1,40 @@
+import java.util.Scanner;
+public class GradeCalculator2 {
+
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);        
+
+for (int i=1;i<=10;i++) {
+System.out.print("Enter name of student "+i+": ");
+String name = scanner.nextLine();            
+System.out.print("Enter attendance percentage of student " +i+ ": ");
+double attendance = scanner.nextDouble();
+ scanner.nextLine();            
+  char grade;
+  switch ((int) attendance) {
+                case 90:
+                    grade = 'A';
+                    break;
+                case 80:
+                    grade = 'B';
+                    break;
+                case 70:
+                    grade = 'C';
+                    break;
+                case 60:
+                    grade = 'D';
+                    break;
+                default:
+                    if (attendance>=45 && attendance<60) {
+                        grade = 'E';
+                    } else {
+                        grade = 'F';
+                    }
+            }
+            
+            System.out.println("Grade for " + name + ": " + grade);
+        }
+        
+        scanner.close();
+    }
+}
